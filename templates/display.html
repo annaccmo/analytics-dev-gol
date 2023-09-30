@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Profile Page</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin"></body>
+		<nav class="navtop">
+				<div>
+					<h1>Analytics Gol</h1>
+					<a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a>
+					<a href="{{ url_for('display') }}"><i class="fas fa-user-circle"></i>Profile</a>
+					<a href="{{ url_for('search') }}"><i class="fas fa-search"></i>Search</a>
+					<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+					<a href="{{ url_for('log') }}"><i class="fas fa-list"></i>Log</a>
+				</div>
+		</nav>
+
+		<div  align="center">
+			<p>Your account details are below:</p>
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td>{{ user[1] }}</td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td>******</td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td>{{ user[2] }}</td>
+				</tr>
+			</table>
+			<a href="{{ url_for('update')}}">Alterar alguma infromação da conta</a>
+		</div>
+	</body>
+</html>

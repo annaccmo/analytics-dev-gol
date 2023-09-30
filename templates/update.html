@@ -1,0 +1,35 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>update</title>
+		<link rel="stylesheet" href="../static/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin"></body>
+		<nav class="navtop">
+			<div>
+				<h1>Analytics Gol</h1>
+				<a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('display') }}"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="{{ url_for('search') }}"><i class="fas fa-search"></i>Search</a>
+                <a href="{{ url_for('log') }}"><i class="fas fa-list"></i>Log</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				</div>
+		</nav>
+		<div class="updatecontent" align="center">
+            <div class="updatetop">
+				<h1>Atualizar dados</h1>				
+			<div class="updatebottom">
+				<form action="{{ url_for('update')}}" method="post" autocomplete="off">
+					<div class="msg">{{ msg }}</div>
+					<input type="text" name="username" placeholder="Username" class="textbox" id="username"></br></br>
+					<input type="password" name="password" placeholder="Password" class="textbox" id="password" ></br></br>
+					<input type="text" name="name" placeholder="name" class="textbox" id="name" ></br></br>
+					<input type="submit" class="btn" value="Update">
+				</form>				
+				
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Log Page</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin"></body>
+		<nav class="navtop">
+				<div>
+					<h1>Analytics Gol</h1>
+					<a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a>
+					<a href="{{ url_for('display') }}"><i class="fas fa-user-circle"></i>Profile</a>
+                    <a href="{{ url_for('search') }}"><i class="fas fa-search"></i>Search</a>
+                    <a href="{{ url_for('log') }}"><i class="fas fa-list"></i>Log</a>
+					<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				</div>
+		</nav>
+
+		<div>
+			<p>Buscas Feitas por esse usuário:</p>
+			<table>
+                <thead>
+				<tr>
+					<th>Data da busca</th>
+					<th>Mercado</th>
+                    <th>Ano Inicial</th>
+                    <th>Mês Inicial</th>
+                    <th>Ano Final</th>
+                    <th>Mês Final</th>
+                </tr>
+                </thead>
+                <tbody>
+				{% for log in log_user %} 
+                <tr>
+					<td>{{ log[2] }}:</td>
+					<td>{{ log[3] }}</td>
+                    <td>{{ log[4] }}</td>
+                    <td>{{ log[5] }}</td>
+                    <td>{{ log[6] }}</td>
+                    <td>{{ log[7] }}</td>
+				</tr>
+                {% endfor %}
+                </tbody>
+			</table>
+		</div>
+	</body>
+</html>

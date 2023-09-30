@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> register </title>
+		<link rel="stylesheet" href="../static/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="registercontent" align="center">
+			<div class="registertop">
+				<h1>Register</h1>
+			</div></br></br>
+			<div class="registerbottom">
+			<form action="{{ url_for('register')}}" method="post" autocomplete="off">
+			<div class="msg">{{ msg }}</div>
+			<input type="text" name="username" placeholder="Username" class="textbox" id="username" required></br></br>
+			<input type="password" name="password" placeholder="Password" class="textbox" id="password" required></br></br>
+			<input type="text" name="name" placeholder="Your Name" class="textbox" id="name" required></br></br>
+			<input type="submit" class="btn" value="Register">
+			</form>
+			<p class="worddark">Already have account? <a class="worddark" href="{{ url_for('login')}}">Login here</a></p>
+			</div>
+		</div>
+	</body>
+</html>

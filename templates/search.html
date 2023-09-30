@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Search Page</title>
+		<link rel="stylesheet" href="../static/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>Analytics Gol</h1>
+                <a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('display') }}"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="{{ url_for('search') }}"><i class="fas fa-search"></i>Search</a>
+                <a href="{{ url_for('log') }}"><i class="fas fa-list"></i>Log</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+        <div class="searchcontent" align="center">
+            <div class="searchtop">
+                <h1>Parâmetros para plot do Gráfico</h1>
+            </div>
+            <div class="searchbottom">
+                <form action="{{ url_for('search')}}" method="post" autocomplete="off">
+                <div class="msg">{{ msg }}</div>
+                <label for="mercado_select">Mercado</label>
+                <select name="market" aria-placeholder="select">
+                    <option>selecione</option>
+                    {% for market in market_list %} 
+                    <option value="{{market[0]}}">{{market[0]}}</option>    
+                    {% endfor %}
+                </select></br></br>
+                <label for="date_year_begin">Ano Inicial</label>
+                <input type="number" name="date_year_begin"  id="date_year_begin" required>
+                <label for="date_month_begin">Mês Inicial</label>
+                <input type="number" name="date_month_begin" id="date_month_begin" min="1" max="12" required></br></br>
+                <label for="date_year_end">Ano Final</label>
+                <input type="number" name="date_year_end"  id="date_year_end" required>
+                <label for="date_month_end">Mês Final</label>
+                <input type="number" name="date_month_end"  id="date_month_end" min="1" max="12" required></br></br>
+                <input type="submit" class="btn" value="Search">
+                </form>
+            </div>
+        </div>
+	</body>
+</html>
+
