@@ -1,0 +1,11 @@
+Flask
+matplotlib
+matplotlib-inline
+mysql-connector-python
+numpy
+pandas
+passlib
+poetry-core
+requests
+toml
+gunicorn

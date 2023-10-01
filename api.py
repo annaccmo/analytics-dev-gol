@@ -5,7 +5,7 @@ from plot_graph import plot_graph
 from passlib.context import CryptContext
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 
 app.secret_key = 'c@s3D3vG0l'
 
