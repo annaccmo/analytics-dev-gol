@@ -9,12 +9,12 @@ on:
 
 env:
   AWS_REGION: us-east-2                   
-  ECR_REPOSITORY: ${{ MY_ECR_REPOSITORY }}           
-  ECS_SERVICE: ${{ MY_ECS_SERVICE  }}         
-  ECS_CLUSTER: ${{ MY_ECS_CLUSTER }}             
-  ECS_TASK_DEFINITION: ${{ MY_ECS_TASK_DEFINITION }}
+  ECR_REPOSITORY: ${{ env.MY_ECR_REPOSITORY }}           
+  ECS_SERVICE: ${{ env.MY_ECS_SERVICE  }}         
+  ECS_CLUSTER: ${{ env.MY_ECS_CLUSTER }}             
+  ECS_TASK_DEFINITION: ${{ env.MY_ECS_TASK_DEFINITION }}
                                                
-  CONTAINER_NAME: ${{ MY_CONTAINER_NAME }}         
+  CONTAINER_NAME: ${{ env.MY_CONTAINER_NAME }}         
                                               
 
 permissions:
