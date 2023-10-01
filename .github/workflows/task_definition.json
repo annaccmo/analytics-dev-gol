@@ -98,7 +98,7 @@
             ],
             "dependsOn": [
                 {
-                    "containerName": "",
+                    "containerName": "analytics-dev",
                     "condition": "START"
                 }
             ],
